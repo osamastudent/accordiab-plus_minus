@@ -1,0 +1,123 @@
+<---------------------html-------------------->
+
+
+<div class="row">
+<div class="col-md-12">
+<div class="accordian">
+<div class="contentbox">
+<div class="label">question 1</div>
+<div class="accordiancontent">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores reiciendis hic odio, iusto magni corrupti dicta nostrum vitae dolores, optio vero corporis accusamus sunt, dolorem perferendis soluta nulla eligendi.</p>
+</div>
+</div>
+</div>
+
+
+
+<div class="accordian">
+<div class="contentbox">
+<div class="label">question 2</div>
+<div class="accordiancontent">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores reiciendis hic odio, iusto magni corrupti dicta nostrum vitae dolores, optio vero corporis accusamus sunt, dolorem perferendis soluta nulla eligendi.</p>
+</div>
+</div>
+</div>
+
+
+
+<div class="accordian">
+<div class="contentbox">
+<div class="label">question 3</div>
+<div class="accordiancontent">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores reiciendis hic odio, iusto magni corrupti dicta nostrum vitae dolores, optio vero corporis accusamus sunt, dolorem perferendis soluta nulla eligendi.</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="accordian">
+<div class="contentbox">
+<div class="label">question 4</div>
+<div class="accordiancontent">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis asperiores reiciendis hic odio, iusto magni corrupti dicta nostrum vitae dolores, optio vero corporis accusamus sunt, dolorem perferendis soluta nulla eligendi.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<script>
+const accordian=document.getElementsByClassName('contentbox');
+for (index = 0; index < accordian.length; index++) {
+  accordian[index].addEventListener('click',function(){
+  this.classList.toggle('active');
+  });
+  
+};
+</script>
+<-------------------------------------------html end----------------------------->
+
+<------------------css start------------------------------------------------------>
+
+
+
+
+
+
+
+
+
+
+.accordian{
+    width: auto;
+}
+
+.accordian .contentbox{
+position: relative;
+margin: 10px 20px;
+}
+.accordian .contentbox .label{
+    position: relative;
+background: #9ea1a5;
+padding: 10px;
+cursor: pointer;
+}
+
+
+.accordian .contentbox .label::before{
+content: '+';
+position: absolute;
+top: 10%;
+right: 20px;
+float: right;
+font-weight: bold;
+color: white;
+font-size: 1.5rem;
+
+}
+
+
+.accordian .contentbox .accordiancontent{
+position: relative;
+overflow: hidden;
+background-color: white;
+height: 0;
+overflow-y: auto;
+transition: 0.3s;
+}
+
+
+.accordian .contentbox.active .accordiancontent{
+height: 100px;
+}
+
+.accordian .contentbox.active .label::before{
+content: "-";
+top: 0%;
+font-weight: bold;
+}
